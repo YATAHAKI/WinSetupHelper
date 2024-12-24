@@ -26,6 +26,19 @@
 3. Run the main script to open the interactive menu.
 4. Follow the on-screen prompts to install applications, configure WSL, manage Defender settings, or install PowerShell modules.
 
+### Enabling the Execution of PowerShell Scripts
+
+To run PowerShell scripts on your system, you may need to change the execution policy to allow script execution. By default, Windows restricts running scripts for security reasons. To enable the execution of scripts, follow these steps:
+
+1. Open **PowerShell** as an administrator:
+   - Right-click on the Start menu, select **Windows PowerShell (Admin)** or **Terminal (Admin)**.
+
+2. Set the execution policy to allow scripts to run by executing the following command:
+   
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
 ## Customization
 
 - Modify the scripts to add or remove applications, change system configurations, or adjust PowerShell modules according to your needs.

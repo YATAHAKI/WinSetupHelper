@@ -13,9 +13,10 @@ function Install-WingetApps {
         "JetBrains.Toolbox",
         "Postman.Postman",
         "Microsoft.VisualStudioCode",
-        "Microsoft.VisualStudio.2022.Community.Preview",
+        "Microsoft.VisualStudio.2022.Enterprise",
         "DEVCOM.JetBrainsMonoNerdFont",
-        "Vencord.Vesktop"
+        "Vencord.Vesktop",
+        "chocolatey.chocolatey"
     )
 
     Write-Host "Available applications to install (enter the numbers to exclude):"
@@ -32,7 +33,7 @@ function Install-WingetApps {
 
         foreach ($app in $appsToInstall) {
             Write-Host "`nInstalling $app..."
-            winget install -e --id $app
+            winget install -e --id $app --source winget
             if ($?) {
                 Write-Host "$app installed successfully." -ForegroundColor Green
             } else {
